@@ -1,0 +1,10 @@
+[ ] Clean CMake build and CTest
+[ ] Objective-C++ contract tests
+[ ] SwiftUI golden journey
+[ ] Accessibility review
+[ ] Persistence recovery test
+[ ] C4 and ADR reconciliation
+[ ] Traceability complete
+[ ] Privacy manifest review
+[ ] Release archive validation planned
+[ ] No secrets or personal data

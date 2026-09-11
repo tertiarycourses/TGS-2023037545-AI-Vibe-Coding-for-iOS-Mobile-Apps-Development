@@ -1,0 +1,1 @@
+Preview states: empty; loaded with three stable IDs; invalid amount with preserved text; large Dynamic Type with VoiceOver labels.

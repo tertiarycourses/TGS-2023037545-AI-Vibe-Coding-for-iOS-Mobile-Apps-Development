@@ -1,0 +1,6 @@
+artifact,version,requirement,owner,evidence,status
+DomainCore,v1.0,REQ-001;REQ-002,Developer,logs/domain.txt,PASS
+BudgetBridge,v1.0,REQ-001;REQ-002,Developer,logs/bridge.txt,PASS
+SwiftUI shell,v1.0,REQ-001;REQ-004,Developer,logs/ui.txt,PASS
+Persistence,v1.0,REQ-003,Developer,logs/restart.txt,PASS
+Architecture pack,v1.0,REQ-005,Technical lead,docs/traceability.csv,PASS

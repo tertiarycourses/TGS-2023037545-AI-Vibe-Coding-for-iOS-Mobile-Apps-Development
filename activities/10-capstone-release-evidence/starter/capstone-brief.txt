@@ -1,0 +1,1 @@
+BudgetBuddy must accept exact-cent expenses, enforce a monthly limit, persist accepted entries, recover from failure and remain operable with assistive technology. Deliver a portable C++ core, Objective-C++ adapter, SwiftUI shell and evidence pack.

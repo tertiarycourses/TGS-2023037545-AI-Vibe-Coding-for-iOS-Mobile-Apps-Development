@@ -1,0 +1,1 @@
+Inject invalid JSON -> stable corruptStore error. Inject failed temporary write -> old snapshot remains readable. Retry with healthy fake -> save succeeds without losing the draft.

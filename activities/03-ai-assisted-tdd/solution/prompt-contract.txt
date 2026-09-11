@@ -1,0 +1,6 @@
+Outcome: reject any draft that would exceed remaining budget.
+Relevant context: include/BudgetPolicy.hpp, src/BudgetPolicy.cpp and failing-test.cpp.
+Protected interfaces: do not change BudgetPolicy::evaluate signature or Money units.
+Constraints: minimal patch; no Apple frameworks; no unrelated formatting.
+Exact verification: cmake configure, build, then ctest --output-on-failure.
+Finish: initial failure captured, scoped diff reviewed, full suite green.

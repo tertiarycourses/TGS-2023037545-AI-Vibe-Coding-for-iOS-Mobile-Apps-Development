@@ -1,0 +1,2 @@
+REQ-ID | Actor | Input | Business rule | Observable outcome | Acceptance evidence
+REQ-001 | | | | |

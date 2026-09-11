@@ -1,0 +1,1 @@
+BudgetBuddy lets a learner record an expense, compare spending with a monthly limit, persist accepted entries and recover from invalid input. The iOS interface must remain responsive and accessible. The portable domain rules must not import Apple frameworks.

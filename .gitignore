@@ -1,0 +1,28 @@
+# Secrets and local agent configuration
+.env
+**/.env
+.claude/
+
+# Confidential assessment and source material
+assessment/
+reference/
+SOURCE_REGISTER.md
+**/*Answer Key*.docx
+**/Answer to *.docx
+
+# Build-only sources, generated design assets and QA evidence
+build/
+assets/
+slide_map.json
+qa/
+**/qa/
+**/renders/
+**/source_extracts/
+
+# Temporary and operating-system files
+.DS_Store
+*.tmp
+*.temp
+*.bak
+*.swp
+~$*

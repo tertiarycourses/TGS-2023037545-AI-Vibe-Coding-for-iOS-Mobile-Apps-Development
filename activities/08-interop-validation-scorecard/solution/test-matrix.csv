@@ -1,0 +1,6 @@
+requirement,domain_test,bridge_test,ui_test,threshold,evidence
+REQ-001,AcceptsPositive,ExactCents,AddExpense,100%,logs/domain.txt
+REQ-002,RejectsOverspend,StableError,ShowsRecovery,100%,logs/negative.txt
+REQ-003,RestoresSnapshot,DTOIdentity,Relaunch,100%,logs/restart.txt
+REQ-004,N/A,LabelsMapped,VoiceOverPath,critical flow,logs/a11y.txt
+REQ-005,TraceComplete,N/A,N/A,complete trace,docs/traceability.csv

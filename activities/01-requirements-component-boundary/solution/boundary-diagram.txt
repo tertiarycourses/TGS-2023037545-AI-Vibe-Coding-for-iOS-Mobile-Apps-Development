@@ -1,0 +1,2 @@
+SwiftUI View -> BudgetViewModel -> BudgetBridge.h -> BudgetBridge.mm -> ExpenseService (portable C++) -> ExpenseRepository port
+Dependency rule: arrows point inward; C++ DomainCore imports no Swift, Objective-C, UIKit or SwiftUI.

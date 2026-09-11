@@ -1,0 +1,6 @@
+requirement,domain_test,bridge_test,ui_test,threshold,evidence
+REQ-001,,,,100%,
+REQ-002,,,,100%,
+REQ-003,,,,100%,
+REQ-004,,,,critical flow,
+REQ-005,,,,complete trace,

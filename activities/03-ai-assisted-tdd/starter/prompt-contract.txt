@@ -1,0 +1,6 @@
+Outcome:
+Relevant context:
+Protected interfaces:
+Constraints:
+Exact verification commands:
+Finish condition:

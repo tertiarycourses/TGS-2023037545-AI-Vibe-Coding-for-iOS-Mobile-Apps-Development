@@ -1,0 +1,3 @@
+RED: injected unused variable -> compiler warning promoted to error.
+REPAIR: removed unused variable at causal line.
+GREEN: configure/build/CTest returned exit 0.

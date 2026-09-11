@@ -1,0 +1,9 @@
+# ADR-NNN: Decision title
+Status: Proposed
+Context:
+Options considered:
+Decision:
+Consequences:
+Requirements affected:
+Tests/evidence:
+Owner and review date:

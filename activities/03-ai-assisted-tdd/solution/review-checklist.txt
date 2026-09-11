@@ -1,0 +1,6 @@
+[ ] Contract preserved
+[ ] Integer cents preserved
+[ ] No raw owning pointer
+[ ] Failure path covered
+[ ] No unrelated edits
+[ ] Focused and regression checks pass

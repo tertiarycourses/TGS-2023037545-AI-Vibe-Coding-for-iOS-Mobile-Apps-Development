@@ -1,0 +1,6 @@
+ADR-001: Objective-C++ is the sole language-translation boundary
+Status: Accepted
+Context: Swift cannot consume arbitrary C++ templates and ownership must be explicit.
+Decision: public Objective-C header, C++ includes and RAII ownership only in .mm, immutable DTO returns.
+Consequences: extra adapter code; narrow stable contract; independently testable core.
+Requirements: REQ-001, REQ-002. Evidence: BridgeContractTests.

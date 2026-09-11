@@ -1,0 +1,1 @@
+Release candidate evidence is complete for local validation. App Store signing, archive upload, build processing and submission are separate future gates and are not claimed here.

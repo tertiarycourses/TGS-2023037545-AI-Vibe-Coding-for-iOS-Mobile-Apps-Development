@@ -1,0 +1,6 @@
+requirement,design_element,implementation,test,evidence,status
+REQ-001,BudgetPolicy,DomainCore/src/BudgetPolicy.cpp,AcceptsPositive,logs/domain.txt,PASS
+REQ-002,DomainError,BudgetBridge.mm,StableError,logs/negative.txt,PASS
+REQ-003,Repository port,JsonRepository.cpp,Relaunch,logs/restart.txt,PASS
+REQ-004,Semantic controls,BudgetScreen.swift,VoiceOverPath,logs/a11y.txt,PASS
+REQ-005,Evidence index,docs/evidence-index.txt,TraceComplete,docs/traceability.csv,PASS

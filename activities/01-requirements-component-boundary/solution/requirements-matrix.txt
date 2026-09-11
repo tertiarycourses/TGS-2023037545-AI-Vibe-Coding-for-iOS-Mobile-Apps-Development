@@ -1,0 +1,5 @@
+REQ-001 | User | amount and category | amount must be positive integer cents | accepted expense appears in total | BudgetPolicyTests.AcceptsPositiveExpense
+REQ-002 | User | expense draft | total must not exceed limit | stable overBudget error | BudgetPolicyTests.RejectsOverspend
+REQ-003 | User | saved snapshot | accepted expenses persist | relaunch restores exact cents | PersistenceTests.RestoresSnapshot
+REQ-004 | VoiceOver user | entry controls | every critical control has semantic label | golden path is operable | Accessibility audit
+REQ-005 | Reviewer | evidence index | every requirement maps to design and test | release decision is reproducible | traceability matrix
