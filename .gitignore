@@ -13,6 +13,10 @@ SOURCE_REGISTER.md
 # Build-only sources, generated design assets and QA evidence
 build/
 assets/
+courseware/activity-visuals/
+courseware/QA_REPORT.md
+courseware/SOURCE_TO_OUTPUT_MAP.md
+courseware/TECHNICAL_ANCHOR_INVENTORY.md
 slide_map.json
 qa/
 **/qa/
