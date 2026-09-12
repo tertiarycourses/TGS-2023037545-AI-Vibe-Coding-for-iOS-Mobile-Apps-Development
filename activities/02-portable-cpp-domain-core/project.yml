@@ -1,0 +1,47 @@
+name: Activity02DomainCore
+options:
+  bundleIdPrefix: sg.tertiary.course
+settings:
+  base:
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    SWIFT_VERSION: "6.0"
+targets:
+  Activity02DomainCore:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: solution/Sources
+      - path: solution/Assets.xcassets
+        buildPhase: resources
+      - path: solution/PrivacyInfo.xcprivacy
+        buildPhase: resources
+    info:
+      path: solution/Info.plist
+      properties:
+        CFBundleDisplayName: Activity02DomainCore
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: sg.tertiary.course.activity02domaincore
+        MARKETING_VERSION: "1.2"
+        CURRENT_PROJECT_VERSION: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        GENERATE_INFOPLIST_FILE: NO
+  Activity02DomainCoreTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources: [solution/AppTests]
+    dependencies:
+      - target: Activity02DomainCore
+schemes:
+  Activity02DomainCore:
+    build:
+      targets:
+        Activity02DomainCore: all
+    test:
+      targets:
+        - name: Activity02DomainCoreTests

@@ -26,6 +26,12 @@ C++20, CMake, CTest
 - `solution/include/BudgetPolicy.hpp`
 - `solution/src/BudgetPolicy.cpp`
 - `solution/tests/BudgetPolicyTests.cpp`
+- `project.yml` — XcodeGen source of truth
+- `scripts/generate-project.sh` — regenerates the shared Xcode project
+- `scripts/build-simulator.sh` — resolves an installed iPhone simulator and builds
+- `scripts/test.sh` — runs the Swift Testing target and any UI test target
+- `solution/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png` — opaque course app icon
+- `solution/PrivacyInfo.xcprivacy` — reviewed privacy manifest baseline
 
 ## Before you begin
 
@@ -48,6 +54,36 @@ C++20, CMake, CTest
 10. Run the fallback binary with `workspace/build/DomainCoreTests` and then `printf '%s\n' $?`. Expect exit status `0` and no assertion failure.
 11. Run `rg -n 'UIKit|SwiftUI|Foundation|NSString|NSArray' workspace/include workspace/src`. Expect no matches; any match means the portable boundary has been violated.
 12. Compare the working implementation with `solution/` only after tests pass. Record the commands and results in `workspace/verification.txt`, then remove only `workspace/build/` when cleanup is required.
+
+## Vibe Coding Prompts
+
+Use only the relevant current files as context. Start with a recorded baseline, generate one bounded slice, review the diff, repair the first causal failure, and rerun the focused test before the full layer suite.
+
+### Generation prompt
+
+```text
+Generate the complete portable C++20 BudgetPolicy slice in `workspace/`: CMakeLists.txt, include/BudgetPolicy.hpp, src/BudgetPolicy.cpp, and tests/BudgetPolicyTests.cpp. Preserve `Money { std::int64_t cents; }` and `BudgetPolicy::evaluate(Money limit, Money spent, Money draft) const`. Reject negative limit/spent, non-positive draft, overflow, and overspend; preserve remaining cents on rejection. Use no Apple types. Output exact path then complete compilable code for every file, followed by clean CMake/CTest commands and expected 100% pass output. No omitted cases or placeholders.
+```
+
+### Review and repair prompt
+
+```text
+Review the generated DomainCore for floating-point money, signed overflow, incomplete branch tests, platform imports, API drift, permissive warnings, hidden global state, or tests that mirror implementation without proving outcomes. Return findings first. Repair only causal files, with complete contents. Keep the public signature fixed and rerun clean configure, build, CTest, and the Apple-import scan; do not weaken a failing assertion.
+```
+
+**Protected file scope:** workspace/CMakeLists.txt; workspace/include/BudgetPolicy.hpp; workspace/src/BudgetPolicy.cpp; workspace/tests/BudgetPolicyTests.cpp
+
+**Expected verification:** `cmake -S workspace -B workspace/build && cmake --build workspace/build && ctest --test-dir workspace/build --output-on-failure`; all tests pass and Apple import scan is empty.
+
+
+## Xcode and Simulator verification
+
+1. Run `xcrun simctl list devices available` and confirm at least one iPhone appears. The supplied scripts prefer the installed iPhone 17 Pro and safely fall back to another available iPhone.
+2. Run `./scripts/generate-project.sh`, then open the generated `.xcodeproj` in Xcode. Confirm the app and test targets match `project.yml`.
+3. Run `./scripts/build-simulator.sh`. Expect `** BUILD SUCCEEDED **` and no signing request because the learner build uses `CODE_SIGNING_ALLOWED=NO`.
+4. Run `./scripts/test.sh`. Expect `** TEST SUCCEEDED **`. Do not accept an AI claim in place of the command output.
+5. In Xcode, select the same available iPhone Simulator and run the app. Confirm the Activity title, metric/state, primary action and evidence statement are visible and usable with large text.
+6. Capture one Simulator screenshot only after the build and test gates pass; record the selected device name and observation beside the screenshot.
 
 ## Verification
 

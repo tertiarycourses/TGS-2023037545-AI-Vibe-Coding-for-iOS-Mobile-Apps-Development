@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0EF254AB85266E67C6DC8C98 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B004F78D4F57CBEDB312289 /* App.swift */; };
+		51A8649D69C7CE4EE57F20AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1042FCDCCB212F4BB52DF583 /* Assets.xcassets */; };
+		5C42028B4AEC1776AE67BBBD /* AppModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CDF23582B8616678E05E93 /* AppModelTests.swift */; };
+		8D9B4407D2ADB08C575BA3E6 /* AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8FBC7DCFD08FE373689BCC /* AppUITests.swift */; };
+		B6D4846D3976EBBF6245A5C9 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987119915060CAE8451597A8 /* Components.swift */; };
+		BA5D21F581080CF977CA9F7A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 4B0F52E13FDCF5A03D8DD8B3 /* PrivacyInfo.xcprivacy */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		694FFC2065621D7B080B7CF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C75D0BF3D59D0A4BD1E975E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2FE1E3743215CA12C273FA0;
+			remoteInfo = FocusCards;
+		};
+		DBF0200DC3217AACB73134A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C75D0BF3D59D0A4BD1E975E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2FE1E3743215CA12C273FA0;
+			remoteInfo = FocusCards;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D8FBC7DCFD08FE373689BCC /* AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITests.swift; sourceTree = "<group>"; };
+		1042FCDCCB212F4BB52DF583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B0F52E13FDCF5A03D8DD8B3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		6B004F78D4F57CBEDB312289 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		987119915060CAE8451597A8 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		987572D973EDA0FACA2AA62B /* FocusCards.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FocusCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A75F21D2C2333AC088E56A1C /* FocusCardsTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = FocusCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9C1EFF80D7F5C8DC8C22543 /* FocusCardsUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = FocusCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0CDF23582B8616678E05E93 /* AppModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		461CB06AAA2E3C9D50ADAD50 = {
+			isa = PBXGroup;
+			children = (
+				AC4E0946F46B542EE989C9E6 /* AppTests */,
+				DDB4FC1E8EDCBCC3F8CBEA1E /* AppUITests */,
+				EB31F91A38DC1DCEAE15E5BA /* Sources */,
+				9F33471526B7F5A0E626A7F2 /* SourcesPackage */,
+				F7EC6E430375A26144BBB844 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F33471526B7F5A0E626A7F2 /* SourcesPackage */ = {
+			isa = PBXGroup;
+			children = (
+				1042FCDCCB212F4BB52DF583 /* Assets.xcassets */,
+				4B0F52E13FDCF5A03D8DD8B3 /* PrivacyInfo.xcprivacy */,
+			);
+			path = SourcesPackage;
+			sourceTree = "<group>";
+		};
+		AC4E0946F46B542EE989C9E6 /* AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0CDF23582B8616678E05E93 /* AppModelTests.swift */,
+			);
+			name = AppTests;
+			path = SourcesPackage/AppTests;
+			sourceTree = "<group>";
+		};
+		DDB4FC1E8EDCBCC3F8CBEA1E /* AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0D8FBC7DCFD08FE373689BCC /* AppUITests.swift */,
+			);
+			name = AppUITests;
+			path = SourcesPackage/AppUITests;
+			sourceTree = "<group>";
+		};
+		EB31F91A38DC1DCEAE15E5BA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6B004F78D4F57CBEDB312289 /* App.swift */,
+				987119915060CAE8451597A8 /* Components.swift */,
+			);
+			name = Sources;
+			path = SourcesPackage/Sources;
+			sourceTree = "<group>";
+		};
+		F7EC6E430375A26144BBB844 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				987572D973EDA0FACA2AA62B /* FocusCards.app */,
+				A75F21D2C2333AC088E56A1C /* FocusCardsTests.xctest */,
+				C9C1EFF80D7F5C8DC8C22543 /* FocusCardsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64BB749F6124EC371C143B51 /* FocusCardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85359C59545E2637E9B17E6C /* Build configuration list for PBXNativeTarget "FocusCardsTests" */;
+			buildPhases = (
+				7DC065B19583D19986A93CFB /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FC2CA0C6E54A7F0613FCF19 /* PBXTargetDependency */,
+			);
+			name = FocusCardsTests;
+			packageProductDependencies = (
+			);
+			productName = FocusCardsTests;
+			productReference = A75F21D2C2333AC088E56A1C /* FocusCardsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		834B744066B025623F68A9E1 /* FocusCardsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 797D3F5976AF3CC8C4C7DA1F /* Build configuration list for PBXNativeTarget "FocusCardsUITests" */;
+			buildPhases = (
+				3202C5A0456F450CA628CEAC /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A1FF1B458B73C49A95848A6 /* PBXTargetDependency */,
+			);
+			name = FocusCardsUITests;
+			packageProductDependencies = (
+			);
+			productName = FocusCardsUITests;
+			productReference = C9C1EFF80D7F5C8DC8C22543 /* FocusCardsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		A2FE1E3743215CA12C273FA0 /* FocusCards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EFB57C8A42927B65D8A5613 /* Build configuration list for PBXNativeTarget "FocusCards" */;
+			buildPhases = (
+				1261AA4DFD74A002FC9DCEDC /* Sources */,
+				6DB8F28F388EB071FB4FB8D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FocusCards;
+			packageProductDependencies = (
+			);
+			productName = FocusCards;
+			productReference = 987572D973EDA0FACA2AA62B /* FocusCards.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C75D0BF3D59D0A4BD1E975E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					834B744066B025623F68A9E1 = {
+						TestTargetID = A2FE1E3743215CA12C273FA0;
+					};
+				};
+			};
+			buildConfigurationList = A1F578A6DC340186829261BD /* Build configuration list for PBXProject "FocusCards" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 461CB06AAA2E3C9D50ADAD50;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F7EC6E430375A26144BBB844 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2FE1E3743215CA12C273FA0 /* FocusCards */,
+				64BB749F6124EC371C143B51 /* FocusCardsTests */,
+				834B744066B025623F68A9E1 /* FocusCardsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6DB8F28F388EB071FB4FB8D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51A8649D69C7CE4EE57F20AE /* Assets.xcassets in Resources */,
+				BA5D21F581080CF977CA9F7A /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1261AA4DFD74A002FC9DCEDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EF254AB85266E67C6DC8C98 /* App.swift in Sources */,
+				B6D4846D3976EBBF6245A5C9 /* Components.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3202C5A0456F450CA628CEAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D9B4407D2ADB08C575BA3E6 /* AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DC065B19583D19986A93CFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C42028B4AEC1776AE67BBBD /* AppModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A1FF1B458B73C49A95848A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2FE1E3743215CA12C273FA0 /* FocusCards */;
+			targetProxy = 694FFC2065621D7B080B7CF9 /* PBXContainerItemProxy */;
+		};
+		9FC2CA0C6E54A7F0613FCF19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2FE1E3743215CA12C273FA0 /* FocusCards */;
+			targetProxy = DBF0200DC3217AACB73134A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1C3700B2382E2FF6E1ED09C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tertiary.course.FocusCardsTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FocusCards.app/FocusCards";
+			};
+			name = Release;
+		};
+		277B2B00D8BA13E35E7C07EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tertiary.course.FocusCardsUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FocusCards;
+			};
+			name = Debug;
+		};
+		553140B650338244BADE4E57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tertiary.course.FocusCardsUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FocusCards;
+			};
+			name = Release;
+		};
+		712F41A3930501BA1669D5D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		827E8CAD2C4DB0541018E12C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SourcesPackage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tertiary.course.focuscards;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		90A15FDA3FA983E41F9BE8DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tertiary.course.FocusCardsTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FocusCards.app/FocusCards";
+			};
+			name = Debug;
+		};
+		A2F8E1888EE0DA0D88B3FFBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SourcesPackage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.tertiary.course.focuscards;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D9056C23A3E417082D4333DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0EFB57C8A42927B65D8A5613 /* Build configuration list for PBXNativeTarget "FocusCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				827E8CAD2C4DB0541018E12C /* Debug */,
+				A2F8E1888EE0DA0D88B3FFBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		797D3F5976AF3CC8C4C7DA1F /* Build configuration list for PBXNativeTarget "FocusCardsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277B2B00D8BA13E35E7C07EA /* Debug */,
+				553140B650338244BADE4E57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		85359C59545E2637E9B17E6C /* Build configuration list for PBXNativeTarget "FocusCardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90A15FDA3FA983E41F9BE8DA /* Debug */,
+				1C3700B2382E2FF6E1ED09C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A1F578A6DC340186829261BD /* Build configuration list for PBXProject "FocusCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				712F41A3930501BA1669D5D6 /* Debug */,
+				D9056C23A3E417082D4333DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C75D0BF3D59D0A4BD1E975E /* Project object */;
+}

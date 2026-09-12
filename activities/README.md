@@ -15,4 +15,4 @@ The ten Activities form one progressive BudgetBuddy build:
 9. Activity 9: Architecture and Traceability Documentation — K5, A5 — `09-architecture-traceability-docs/`
 10. Activity 10: Capstone: BudgetBuddy Release Evidence — A1, A2, A3, A4, A5 — `10-capstone-release-evidence/`
 
-Detailed procedures and verification criteria are in each Activity README and its same-basename PDF counterpart.
+Start with `IOS-VIBE-CODING-PROMPT-PACK.md` for the complete prompt-driven workflow. Detailed procedures, tailored generation prompts, review/repair prompts and verification criteria are in each Activity README and its same-basename PDF counterpart.

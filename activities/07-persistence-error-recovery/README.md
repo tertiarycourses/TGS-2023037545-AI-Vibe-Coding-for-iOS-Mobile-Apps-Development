@@ -22,6 +22,12 @@ C++ filesystem, JSON fixture, CTest
 - `starter/repository-contract.hpp`
 - `solution/migration.cpp`
 - `solution/recovery-test.txt`
+- `project.yml` — XcodeGen source of truth
+- `scripts/generate-project.sh` — regenerates the shared Xcode project
+- `scripts/build-simulator.sh` — resolves an installed iPhone simulator and builds
+- `scripts/test.sh` — runs the Swift Testing target and any UI test target
+- `solution/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png` — opaque course app icon
+- `solution/PrivacyInfo.xcprivacy` — reviewed privacy manifest baseline
 
 ## Before you begin
 
@@ -44,6 +50,36 @@ C++ filesystem, JSON fixture, CTest
 10. Validate every JSON fixture with `python3 -m json.tool <file>` and keep test paths under a temporary Activity directory, never the real home or application-support directory.
 11. Record the restart, migration, corruption and failed-write results in `workspace/recovery-evidence.txt`. Compare the expected recovery sequence with `solution/recovery-test.txt`.
 12. Delete only temporary test stores and `.tmp` files after evidence capture. Retain both schema fixtures and every migration/recovery test.
+
+## Vibe Coding Prompts
+
+Use only the relevant current files as context. Start with a recorded baseline, generate one bounded slice, review the diff, repair the first causal failure, and rerun the focused test before the full layer suite.
+
+### Generation prompt
+
+```text
+Generate versioned atomic BudgetBuddy JSON persistence and migration. Keep exact Int64 cents and stable expense IDs. Use schemaVersion, migrate supplied v1 to v2, write to a caller-supplied temporary file then replace the current snapshot, and map corrupt/read/write failures to typed recoverable errors. Create complete repository header/source, fixture, schema note, and deterministic C++ tests that stay inside a temporary directory.
+```
+
+### Review and repair prompt
+
+```text
+Review persistence for real home-directory access, non-atomic overwrite, partial-file loss, double money, unstable IDs, migration without a version gate, caught errors collapsed to Boolean/string, or tests that leave files behind. Return evidence-backed findings and complete causal repairs. Require v1 migration, save/reload equality, corrupt-store classification, failed-replace preservation, retry, and cleanup.
+```
+
+**Protected file scope:** JsonExpenseRepository.hpp/.cpp; snapshot-v1.json; persistence-schema.md; JsonExpenseRepositoryTests.cpp
+
+**Expected verification:** Clean CTest passes migration, round-trip and injected-failure tests; the previous snapshot remains readable after a failed replacement.
+
+
+## Xcode and Simulator verification
+
+1. Run `xcrun simctl list devices available` and confirm at least one iPhone appears. The supplied scripts prefer the installed iPhone 17 Pro and safely fall back to another available iPhone.
+2. Run `./scripts/generate-project.sh`, then open the generated `.xcodeproj` in Xcode. Confirm the app and test targets match `project.yml`.
+3. Run `./scripts/build-simulator.sh`. Expect `** BUILD SUCCEEDED **` and no signing request because the learner build uses `CODE_SIGNING_ALLOWED=NO`.
+4. Run `./scripts/test.sh`. Expect `** TEST SUCCEEDED **`. Do not accept an AI claim in place of the command output.
+5. In Xcode, select the same available iPhone Simulator and run the app. Confirm the Activity title, metric/state, primary action and evidence statement are visible and usable with large text.
+6. Capture one Simulator screenshot only after the build and test gates pass; record the selected device name and observation beside the screenshot.
 
 ## Verification
 

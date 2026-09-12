@@ -22,6 +22,12 @@ AI coding assistant, CTest, diff review
 - `starter/prompt-contract.txt`
 - `solution/prompt-contract.txt`
 - `solution/review-checklist.txt`
+- `project.yml` — XcodeGen source of truth
+- `scripts/generate-project.sh` — regenerates the shared Xcode project
+- `scripts/build-simulator.sh` — resolves an installed iPhone simulator and builds
+- `scripts/test.sh` — runs the Swift Testing target and any UI test target
+- `solution/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png` — opaque course app icon
+- `solution/PrivacyInfo.xcprivacy` — reviewed privacy manifest baseline
 
 ## Before you begin
 
@@ -44,6 +50,36 @@ AI coding assistant, CTest, diff review
 10. Run the complete Activity 2 regression suite against the changed implementation, not only the new overspend test. Expect valid, zero, negative and over-budget cases to pass.
 11. Complete a copy of `solution/review-checklist.txt`. Every unchecked item requires a repair followed by focused and regression reruns.
 12. Retain prompt contract, red trace, reviewed diff, green trace and checklist. These five artifacts demonstrate Red-Green-Refactor rather than an unverified AI-generated result.
+
+## Vibe Coding Prompts
+
+Use only the relevant current files as context. Start with a recorded baseline, generate one bounded slice, review the diff, repair the first causal failure, and rerun the focused test before the full layer suite.
+
+### Generation prompt
+
+```text
+Given the recorded overspend red trace and current BudgetPolicy files, propose the smallest causal patch that rejects a draft above remaining cents. Preserve the signature, integer-cent model, existing tests, and unrelated formatting. Output assumptions, file plan, complete changed files, exact focused and regression commands, and expected observations. Do not claim execution, create a second policy, or change the test to match incorrect behaviour.
+```
+
+### Review and repair prompt
+
+```text
+Review the proposed AI patch semantically. Check the protected signature, subtraction/overflow order, rejected remaining amount, negative inputs, raw ownership, Apple dependencies, unrelated edits, and whether the red test meaningfully failed before the change. If any check fails, return a corrected complete file and explain the smallest causal difference. Require retained red trace, scoped diff, focused green, and full-suite green.
+```
+
+**Protected file scope:** workspace/prompt-contract.txt; workspace/BudgetPolicy.hpp; workspace/BudgetPolicy.cpp; workspace/failing-test.cpp; workspace/red-trace.txt; workspace/green-trace.txt
+
+**Expected verification:** The initial test fails for the missing overspend rule; after the minimal patch the focused binary and full domain suite exit 0.
+
+
+## Xcode and Simulator verification
+
+1. Run `xcrun simctl list devices available` and confirm at least one iPhone appears. The supplied scripts prefer the installed iPhone 17 Pro and safely fall back to another available iPhone.
+2. Run `./scripts/generate-project.sh`, then open the generated `.xcodeproj` in Xcode. Confirm the app and test targets match `project.yml`.
+3. Run `./scripts/build-simulator.sh`. Expect `** BUILD SUCCEEDED **` and no signing request because the learner build uses `CODE_SIGNING_ALLOWED=NO`.
+4. Run `./scripts/test.sh`. Expect `** TEST SUCCEEDED **`. Do not accept an AI claim in place of the command output.
+5. In Xcode, select the same available iPhone Simulator and run the app. Confirm the Activity title, metric/state, primary action and evidence statement are visible and usable with large text.
+6. Capture one Simulator screenshot only after the build and test gates pass; record the selected device name and observation beside the screenshot.
 
 ## Verification
 

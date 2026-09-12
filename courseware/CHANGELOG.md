@@ -1,5 +1,25 @@
 # Changelog
 
+## v1.2 · 12 September 2026
+
+- Reframed the visible course journey as “you specify, AI generates, Xcode proves”; Swift is generated-code review vocabulary rather than a syntax-teaching sequence.
+- Added XcodeGen source projects, generated shared schemes, build/test scripts, privacy manifests and app icons to every Activity.
+- Added three complete standalone simulator-ready capstone apps: BudgetBuddy, FocusCards and HabitPulse, with Swift Testing and XCTest UI targets; BudgetBuddy includes the regulated Objective-C++/C++ bridge.
+- Added explicit Xcode and Simulator verification to every Activity Markdown/PDF guide and the Learner Guide.
+- Added a detailed App Store Connect preparation, archive, export, upload, metadata, screenshot, App Privacy, age-rating, availability, build-attachment, submission and readback workflow. Credentialled external actions remain trainer-demo/future gates and are not claimed.
+- Added current Apple sources for Simulator execution, app icons, privacy manifests/required-reason APIs and App Store Connect mechanics.
+- Preserved K1–K5/A1–A5, 14 training hours plus 2 assessment hours, Activity naming, two-logo cover, five-stage Assessment Flow, Access Activities, 09:30–18:30 timing and closing order.
+
+## v1.1 · 12 September 2026
+
+- Re-centred the course on prompt-driven iOS code generation while preserving the regulated C++ Software Design 3 outcomes and the approved BudgetBuddy architecture.
+- Added a copy/paste-ready end-to-end prompt pack as Markdown and PDF, covering requirements, architecture, portable C++/CMake/tests, Objective-C++ bridging, Swift seams, Observation state, SwiftUI, persistence, Swift Testing, XCTest UI automation, repair, privacy, CI, documentation, traceability, release evidence and final audit.
+- Added tailored generation and review/repair prompts to every Activity guide and regenerated all same-basename Activity PDFs.
+- Added an opening red-to-green prompt workflow and one readable, guarded code-generation prompt slide for every Activity.
+- Updated the Learner Guide, Lesson Plan, slide/source maps, technical-anchor inventory, assessments and QA report for the v1.1 slide references and package identity.
+- Added current official Apple implementation references for Observation, Swift Testing, XCTest/XCUIAutomation and imported C/Objective-C APIs.
+- Preserved the 09:30–18:30 schedule, two-logo cover, Access the Course Activities slide, five-stage Assessment Flow, Activity naming, closing order and omission of Practice Exam.
+
 ## v1.0 · 12 September 2026
 
 - Created the complete WSQ package for **AI Vibe Coding for iOS Mobile Apps Development** (`TGS-2023037545`).

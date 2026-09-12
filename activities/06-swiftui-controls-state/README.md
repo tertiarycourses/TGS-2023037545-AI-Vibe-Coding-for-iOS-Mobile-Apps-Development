@@ -28,6 +28,12 @@ SwiftUI, Observation, Xcode previews
 - `solution/BudgetViewModel.swift`
 - `solution/main.swift`
 - `solution/preview-fixtures.txt`
+- `project.yml` — XcodeGen source of truth
+- `scripts/generate-project.sh` — regenerates the shared Xcode project
+- `scripts/build-simulator.sh` — resolves an installed iPhone simulator and builds
+- `scripts/test.sh` — runs the Swift Testing target and any UI test target
+- `solution/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png` — opaque course app icon
+- `solution/PrivacyInfo.xcprivacy` — reviewed privacy manifest baseline
 
 ## Before you begin
 
@@ -50,6 +56,36 @@ SwiftUI, Observation, Xcode previews
 10. Enter `0`, `-1` and non-numeric text. Expect a clear validation message, no domain mutation and the original draft to remain available for correction.
 11. Turn on VoiceOver or use Accessibility Inspector. Navigate the amount, category and save controls in logical order and confirm each announces purpose and current value.
 12. Retain the two Swift files, four preview states, exact-cent observation, negative-path observation and accessibility note as the Activity evidence.
+
+## Vibe Coding Prompts
+
+Use only the relevant current files as context. Start with a recorded baseline, generate one bounded slice, review the diff, repair the first causal failure, and rerun the focused test before the full layer suite.
+
+### Generation prompt
+
+```text
+Generate the iOS 17+ Swift shell seam for BudgetBuddy. Create `BudgetEvaluating`, production `BudgetBridgeClient`, deterministic `FakeBudgetBridge`, `BudgetSnapshot`, and `@Observable BudgetViewModel`. Then create SwiftUI `BudgetBuddyApp`, `AppRoot`, `BudgetScreen`, amount TextField, Category Picker, Save Button, summary/list rows, validation and retry state, previews for empty/loaded/error/large text, and identifiers amount/saveExpense/validationMessage. Keep policy in C++. Output full files only, with exact paths and required imports.
+```
+
+### Review and repair prompt
+
+```text
+Review the Swift/SwiftUI patch for ObservableObject or @Published drift, policy inside View.body, production dependencies in previews, string-based error parsing, force unwraps, main-thread violations, unstable list identity, inaccessible controls, missing Dynamic Type behaviour, or fake state that cannot prove calls. Repair only confirmed defects with complete files. Run Swift Testing for model behaviour and build all four previews.
+```
+
+**Protected file scope:** BudgetEvaluating.swift; BudgetBridgeClient.swift; FakeBudgetBridge.swift; BudgetModel.swift; BudgetViewModel.swift; BudgetBuddyApp.swift; AppRoot.swift; BudgetScreen.swift; supporting views and previews
+
+**Expected verification:** Swift Testing proves parsing/state/error/retry with a fake; iOS 17+ build succeeds; four deterministic previews construct; required accessibility identifiers exist.
+
+
+## Xcode and Simulator verification
+
+1. Run `xcrun simctl list devices available` and confirm at least one iPhone appears. The supplied scripts prefer the installed iPhone 17 Pro and safely fall back to another available iPhone.
+2. Run `./scripts/generate-project.sh`, then open the generated `.xcodeproj` in Xcode. Confirm the app and test targets match `project.yml`.
+3. Run `./scripts/build-simulator.sh`. Expect `** BUILD SUCCEEDED **` and no signing request because the learner build uses `CODE_SIGNING_ALLOWED=NO`.
+4. Run `./scripts/test.sh`. Expect `** TEST SUCCEEDED **`. Do not accept an AI claim in place of the command output.
+5. In Xcode, select the same available iPhone Simulator and run the app. Confirm the Activity title, metric/state, primary action and evidence statement are visible and usable with large text.
+6. Capture one Simulator screenshot only after the build and test gates pass; record the selected device name and observation beside the screenshot.
 
 ## Verification
 

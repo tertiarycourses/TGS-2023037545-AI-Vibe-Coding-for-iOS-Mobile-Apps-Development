@@ -1,0 +1,49 @@
+name: Activity05Bridge
+options:
+  bundleIdPrefix: sg.tertiary.course
+settings:
+  base:
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    SWIFT_VERSION: "6.0"
+targets:
+  Activity05Bridge:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: solution/Sources
+      - path: solution/Assets.xcassets
+        buildPhase: resources
+      - path: solution/PrivacyInfo.xcprivacy
+        buildPhase: resources
+    info:
+      path: solution/Info.plist
+      properties:
+        CFBundleDisplayName: Activity05Bridge
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: sg.tertiary.course.activity05bridge
+        MARKETING_VERSION: "1.2"
+        CURRENT_PROJECT_VERSION: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        GENERATE_INFOPLIST_FILE: NO
+        SWIFT_OBJC_BRIDGING_HEADER: "solution/Sources/Bridge/Activity05Bridge-Bridging-Header.h"
+        HEADER_SEARCH_PATHS: "$(SRCROOT)/solution/Sources/Bridge"
+  Activity05BridgeTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources: [solution/AppTests]
+    dependencies:
+      - target: Activity05Bridge
+schemes:
+  Activity05Bridge:
+    build:
+      targets:
+        Activity05Bridge: all
+    test:
+      targets:
+        - name: Activity05BridgeTests

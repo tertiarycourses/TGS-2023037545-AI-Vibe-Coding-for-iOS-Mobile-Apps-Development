@@ -2,7 +2,7 @@
 
 Learner materials and hands-on Activities for Tertiary Infotech Academy's WSQ course, **AI Vibe Coding for iOS Mobile Apps Development**.
 
-The course uses a portable C++ domain core, an Objective-C++ interoperability adapter, and a native SwiftUI shell. AI-assisted development is treated as an evidence-driven engineering workflow: specify the contract, create a failing test, make the smallest causal change, review the diff, and retain verification evidence.
+This is an iOS application-development course delivered through vibe coding: learners specify observable behaviour, AI proposes complete files, and Xcode plus the Simulator prove the result. Swift is the vocabulary for reviewing generated SwiftUI code, not a syntax lesson sequence. Portable C++ remains the regulated logic layer behind the Objective-C++ adapter.
 
 ## Course information
 
@@ -32,8 +32,10 @@ The portable core contains business invariants and remains independent of Apple 
 ## Repository contents
 
 - `courseware/` — trainer slide deck, learner-slide PDF, Learner Guide, and Lesson Plan
-- `activities/` — ten self-contained Activity folders with instructions, starter assets, worked solutions, mock data, verification, troubleshooting, and cleanup
-- `LG-AI Vibe Coding for iOS Mobile Apps Development-v1.0.md` — searchable Markdown mirror of the Learner Guide
+- `activities/` — ten self-contained Activity folders with XcodeGen projects, generated shared Xcode schemes, app icons, privacy manifests, scripts, prompts, tests and Simulator verification
+- `activities/10-capstone-release-evidence/solution/projects/` — complete BudgetBuddy, FocusCards and HabitPulse apps
+- `LG-AI Vibe Coding for iOS Mobile Apps Development-v1.2.md` — searchable Markdown mirror of the Learner Guide
+- `activities/IOS-VIBE-CODING-PROMPT-PACK.md` and PDF — copy/paste-ready end-to-end BudgetBuddy generation, review, repair, test, privacy, documentation, CI, and release-evidence prompts
 
 Assessment papers, answer keys, source references, credentials, build sources, and internal QA evidence are intentionally excluded from this learner repository.
 
@@ -46,11 +48,13 @@ git clone https://github.com/tertiarycourses/TGS-2023037545-AI-Vibe-Coding-for-i
 cd TGS-2023037545-AI-Vibe-Coding-for-iOS-Mobile-Apps-Development
 ```
 
-Alternatively, choose **Code → Download ZIP** on GitHub. Begin with [`activities/README.md`](activities/README.md), then work through Activities 1–10 in order. Each Activity names its prerequisites, expected deliverable, verification evidence, troubleshooting path, and safe cleanup boundary.
+Alternatively, choose **Code → Download ZIP** on GitHub. Begin with [`activities/README.md`](activities/README.md), open the prompt pack, then work through Activities 1–10 in order. Each Activity names its prerequisites, generation prompt, review/repair prompt, expected deliverable, verification evidence, troubleshooting path, and safe cleanup boundary.
 
 ## Tooling
 
-- Xcode with Swift and SwiftUI support
+- Xcode 26.6 or compatible, targeting iOS 17+
+- XcodeGen 2.45.4 or compatible
+- An installed iPhone Simulator; the scripts resolve an available device and prefer iPhone 17 Pro when present
 - Apple Clang or another C++20 compiler
 - CMake and CTest where available
 - Git

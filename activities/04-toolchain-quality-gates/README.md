@@ -22,6 +22,12 @@ CMake, compiler warnings, sanitizers, shell
 - `starter/quality-gates.txt`
 - `solution/CMakeLists-snippet.txt`
 - `solution/evidence-log.txt`
+- `project.yml` — XcodeGen source of truth
+- `scripts/generate-project.sh` — regenerates the shared Xcode project
+- `scripts/build-simulator.sh` — resolves an installed iPhone simulator and builds
+- `scripts/test.sh` — runs the Swift Testing target and any UI test target
+- `solution/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png` — opaque course app icon
+- `solution/PrivacyInfo.xcprivacy` — reviewed privacy manifest baseline
 
 ## Before you begin
 
@@ -44,6 +50,36 @@ CMake, compiler warnings, sanitizers, shell
 10. Optional when supported: configure with `cmake -S workspace/domain -B workspace/asan-build -DENABLE_ASAN=ON`, build, and run tests. Record whether the platform supports the sanitizer configuration.
 11. Run `find workspace -maxdepth 2 -type f | sort` and identify generated binaries or cache data separately from source and verification scripts.
 12. Cleanup only `workspace/domain/build`, `workspace/asan-build` and compiled binaries. Retain the strict configuration, verification script and evidence log as A2 evidence.
+
+## Vibe Coding Prompts
+
+Use only the relevant current files as context. Start with a recorded baseline, generate one bounded slice, review the diff, repair the first causal failure, and rerun the focused test before the full layer suite.
+
+### Generation prompt
+
+```text
+Generate a one-command quality gate for the BudgetBuddy DomainCore. Configure C++20, -Wall -Wextra -Werror for Clang/GNU, optional AddressSanitizer with compile and link flags, clean out-of-tree build, and CTest with failure output. Provide complete `workspace/CMakeLists.txt`, `workspace/verify.sh`, and `workspace/quality-gates.txt`. Do not add platform-only flags without compiler guards. State the deliberately injected warning used for RED and the exact causal repair for GREEN.
+```
+
+### Review and repair prompt
+
+```text
+Review the toolchain patch for unguarded flags, in-source builds, ignored failures, missing quotes, warnings not promoted to errors, sanitizer link omissions, or evidence that records only the green result. Return findings, then complete repaired files. Run the same script once with the controlled defect and once after repair; require non-zero then zero and retain both logs.
+```
+
+**Protected file scope:** workspace/CMakeLists.txt; workspace/verify.sh; workspace/quality-gates.txt; workspace/evidence-log.txt
+
+**Expected verification:** `sh workspace/verify.sh` fails on the injected warning and exits 0 after repair with all CTest cases passing.
+
+
+## Xcode and Simulator verification
+
+1. Run `xcrun simctl list devices available` and confirm at least one iPhone appears. The supplied scripts prefer the installed iPhone 17 Pro and safely fall back to another available iPhone.
+2. Run `./scripts/generate-project.sh`, then open the generated `.xcodeproj` in Xcode. Confirm the app and test targets match `project.yml`.
+3. Run `./scripts/build-simulator.sh`. Expect `** BUILD SUCCEEDED **` and no signing request because the learner build uses `CODE_SIGNING_ALLOWED=NO`.
+4. Run `./scripts/test.sh`. Expect `** TEST SUCCEEDED **`. Do not accept an AI claim in place of the command output.
+5. In Xcode, select the same available iPhone Simulator and run the app. Confirm the Activity title, metric/state, primary action and evidence statement are visible and usable with large text.
+6. Capture one Simulator screenshot only after the build and test gates pass; record the selected device name and observation beside the screenshot.
 
 ## Verification
 

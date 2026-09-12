@@ -24,6 +24,12 @@ Xcode, Objective-C++, XCTest
 - `solution/BudgetPolicy.hpp`
 - `solution/BudgetBridge.mm`
 - `solution/bridge-test.swift`
+- `project.yml` — XcodeGen source of truth
+- `scripts/generate-project.sh` — regenerates the shared Xcode project
+- `scripts/build-simulator.sh` — resolves an installed iPhone simulator and builds
+- `scripts/test.sh` — runs the Swift Testing target and any UI test target
+- `solution/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png` — opaque course app icon
+- `solution/PrivacyInfo.xcprivacy` — reviewed privacy manifest baseline
 
 ## Before you begin
 
@@ -46,6 +52,36 @@ Xcode, Objective-C++, XCTest
 10. Expect the exact input `10_000`, spent `2_500` and draft `1_250` to return remaining cents `6_250`; add a second test that verifies rejection maps to error code `1001`.
 11. If Swift cannot see the API, check target membership, the bridging header or module import, and that no C++ type appears in the public header before changing the domain core.
 12. Retain the public header, `.mm` adapter, passing test result and a short ownership note showing Swift retains the adapter while the adapter owns the C++ service through RAII.
+
+## Vibe Coding Prompts
+
+Use only the relevant current files as context. Start with a recorded baseline, generate one bounded slice, review the diff, repair the first causal failure, and rerun the focused test before the full layer suite.
+
+### Generation prompt
+
+```text
+Generate the Objective-C++ bridge for BudgetBuddy. `BudgetBridge.h` must contain only Foundation/Objective-C-compatible declarations, fixed-width cent values, nullability, immutable result DTOs, and NSError**. `BudgetBridge.mm` must include C++, own BudgetPolicy with std::unique_ptr, convert exact cents, and map invalidInput, overBudget, overflow, corruptStore, and writeFailed to stable BudgetDomain codes plus recovery descriptions. Add a complete Swift bridge contract test. Output exact paths and full files; never place a C++ type in the .h.
+```
+
+### Review and repair prompt
+
+```text
+Review the bridge for C++ leakage in the header, target/import incompatibility, truncating conversions, temporary pointers, ambiguous ARC/RAII ownership, partial NSError mapping, mutable DTOs, or success values paired with errors. Return findings and complete repaired files. Require exact 10_000/2_500/1_250 -> 6_250 round trip plus one assertion for every stable error code.
+```
+
+**Protected file scope:** BudgetBridge.h; BudgetBridge.mm; bridge-test.swift; error-mapping.md
+
+**Expected verification:** iOS build and focused bridge tests exit 0; the public header contains no STL/template/reference/owning-pointer type and exact cents survive the round trip.
+
+
+## Xcode and Simulator verification
+
+1. Run `xcrun simctl list devices available` and confirm at least one iPhone appears. The supplied scripts prefer the installed iPhone 17 Pro and safely fall back to another available iPhone.
+2. Run `./scripts/generate-project.sh`, then open the generated `.xcodeproj` in Xcode. Confirm the app and test targets match `project.yml`.
+3. Run `./scripts/build-simulator.sh`. Expect `** BUILD SUCCEEDED **` and no signing request because the learner build uses `CODE_SIGNING_ALLOWED=NO`.
+4. Run `./scripts/test.sh`. Expect `** TEST SUCCEEDED **`. Do not accept an AI claim in place of the command output.
+5. In Xcode, select the same available iPhone Simulator and run the app. Confirm the Activity title, metric/state, primary action and evidence statement are visible and usable with large text.
+6. Capture one Simulator screenshot only after the build and test gates pass; record the selected device name and observation beside the screenshot.
 
 ## Verification
 
