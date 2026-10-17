@@ -7,8 +7,10 @@ This is an iOS application-development course delivered through vibe coding: lea
 ## Course information
 
 - Course code: `TGS-2023037545`
+- Programme: WSQ
 - TSC: Software Design 3 (`ICT-DES-3005-1.1`)
 - Duration: 2 days / 16 hours, including 2 hours of assessment
+- Funding: up to 70% WSQ course-fee funding (up to 50% for eligible Singapore Citizens and PRs aged 21+, up to 70% for Singapore Citizens aged 40+ or SME-sponsored employees). Eligibility and terms apply.
 - Provider: Tertiary Infotech Academy Pte Ltd
 - [Course details and registration](https://www.tertiarycourses.com.sg/wsq-ai-vibe-coding-for-ios-mobile-apps-development.html)
 
